@@ -1,0 +1,6 @@
+name: CoreAPI
+version: 1.0
+authors: Lukas_x538
+description: The CoreAPI for all new coming plugins from AtariaCity
+
+main: de.lukas.coreapi.CoreAPI
