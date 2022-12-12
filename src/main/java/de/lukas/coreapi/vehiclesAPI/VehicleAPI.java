@@ -20,7 +20,7 @@ public class VehicleAPI {
         //** TODO Remove the Vehicle from DB and Give the Player Money **//
     }
 
-    public static void selVehicleToPlayer(String vehicleid, Player target, String uuid2, int price) {
+    public static void selVehicleToPlayer(String vehicleid, Player target, String target2, int price) {
         //** TODO Remove the Vehicle from Player 1 and give it to Player 2 then remove Money from Player 2 and give it Player 1 **//
     }
 
