@@ -19,7 +19,7 @@ public class EconomyAPI {
     public void setBargeld(Player target, double value) {
         if(CoreAPI.getSQL.tableExists("BARGELD")) {
             if(CoreAPI.getSQL.nullCheck("BARGELD")) {
-                // MySQL Set Data
+                //** TODO Add MySQL Support **//
             }
         }
     }
@@ -80,7 +80,7 @@ public class EconomyAPI {
         if(CoreAPI.getSQL.tableExists("BANK")) {
             if(CoreAPI.getSQL.nullCheck("BANK")) {
                 if(hasBank(target)) {
-                    // MySQL Set Data
+                    //** TODO Add MySQL Support **//
                 }
             }
         }
@@ -90,7 +90,7 @@ public class EconomyAPI {
         if(CoreAPI.getSQL.tableExists("BANK")) {
             if(CoreAPI.getSQL.nullCheck("BANK")) {
                 if(kontoExists(konto)) {
-                    // MySQL Set Data
+                    //** TODO Add MySQL Support **//
                 }
             }
         }
@@ -99,7 +99,7 @@ public class EconomyAPI {
     public void createBank(Player target) {
         if(!hasBank(target)) {
             Integer number = (Integer) CoreAPI.getSQL.getHighest("BANK", "konto")+1;
-            // MySQL Set Data
+            //** TODO Add MySQL Support **//
         }
     }
 
