@@ -16,8 +16,4 @@ public class VehicleObject {
 
     }
 
-    public void getUUID() {
-
-    }
-
 }
