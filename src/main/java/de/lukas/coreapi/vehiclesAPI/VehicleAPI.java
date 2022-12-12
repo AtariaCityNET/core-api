@@ -21,4 +21,12 @@ public class VehicleAPI {
     public static void selVehicleToPlayer(String vehicleid, String uuid, String uuid2, int price) {
         //** TODO Remove the Vehicle from Player 1 and give it to Player 2 then remove Money from Player 2 and give it Player 1 **//
     }
+
+    public static void spawnVehicle(String vehicleid, String uuid) {
+        //** TODO Spawn the Vehicle at the Location of the Player **//
+    }
+
+    public static void despawnVehicle(String vehicleid, String uuid) {
+        //** TODO Despawn the Vehicle at the Location of the Player **//
+    }
 }
