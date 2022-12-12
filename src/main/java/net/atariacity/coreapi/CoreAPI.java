@@ -6,6 +6,7 @@ import net.atariacity.coreapi.utils.TextComponents;
 import net.atariacity.coreapi.utils.sql.SQLConfig;
 import net.atariacity.coreapi.utils.sql.SQLFunctions;
 import net.atariacity.coreapi.utils.sql.SQLHandler;
+import net.atariacity.coreapi.vehiclesAPI.VehicleAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 public class CoreAPI extends JavaPlugin {
 
@@ -15,6 +16,7 @@ public class CoreAPI extends JavaPlugin {
     public static TextComponents getTextComponents;
     public static EconomyAPI getEconomyAPI;
     public static MessageAPI getMessageAPI;
+    public static VehicleAPI getVehicleAPI;
 
     @Override
     public void onEnable() {
@@ -38,6 +40,7 @@ public class CoreAPI extends JavaPlugin {
         getTextComponents = new TextComponents();
         getEconomyAPI = new EconomyAPI();
         getMessageAPI = new MessageAPI();
+        getVehicleAPI = new VehicleAPI();
     }
 
 }

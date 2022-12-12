@@ -2,12 +2,16 @@ package net.atariacity.coreapi.vehiclesAPI;
 
 import org.bukkit.entity.Player;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class VehicleAPI {
 
-    public List<UUID> vehicleList;
+    protected HashMap<Integer, UUID> vehicleList;
+
+    public HashMap<Integer, UUID> getVehicleList() {
+        return vehicleList;
+    }
 
     public void registerVehicle(String vehicleid, Player target) {
         //** TODO Register the Vehicle in Database **//
