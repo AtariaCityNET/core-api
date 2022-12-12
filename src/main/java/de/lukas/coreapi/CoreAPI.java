@@ -9,7 +9,7 @@ public class CoreAPI extends JavaPlugin {
 
     private static CoreAPI instance;
 
-    public static SQLFunctions getMySQL;
+    public static SQLFunctions getSQL;
     public static TextComponents getTextComponents;
 
     @Override
@@ -30,7 +30,7 @@ public class CoreAPI extends JavaPlugin {
     }
 
     private static void declareInstances() {
-        getMySQL = new SQLFunctions(SQLHandler.database);
+        getSQL = new SQLFunctions(SQLHandler.database);
         getTextComponents = new TextComponents();
     }
 
