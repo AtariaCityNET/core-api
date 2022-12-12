@@ -1,4 +1,4 @@
-package de.lukas.coreapi.utils.yamlManager;
+package net.atariacity.coreapi.utils.yamlManager;
 
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;

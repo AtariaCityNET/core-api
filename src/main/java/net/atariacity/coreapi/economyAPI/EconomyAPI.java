@@ -1,6 +1,6 @@
-package de.lukas.coreapi.economyAPI;
+package net.atariacity.coreapi.economyAPI;
 
-import de.lukas.coreapi.CoreAPI;
+import net.atariacity.coreapi.CoreAPI;
 import org.bukkit.entity.Player;
 
 public class EconomyAPI {

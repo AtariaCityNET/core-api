@@ -1,11 +1,11 @@
-package de.lukas.coreapi;
+package net.atariacity.coreapi;
 
-import de.lukas.coreapi.economyAPI.EconomyAPI;
-import de.lukas.coreapi.messageAPI.MessageAPI;
-import de.lukas.coreapi.utils.TextComponents;
-import de.lukas.coreapi.utils.sql.SQLConfig;
-import de.lukas.coreapi.utils.sql.SQLFunctions;
-import de.lukas.coreapi.utils.sql.SQLHandler;
+import net.atariacity.coreapi.economyAPI.EconomyAPI;
+import net.atariacity.coreapi.messageAPI.MessageAPI;
+import net.atariacity.coreapi.utils.TextComponents;
+import net.atariacity.coreapi.utils.sql.SQLConfig;
+import net.atariacity.coreapi.utils.sql.SQLFunctions;
+import net.atariacity.coreapi.utils.sql.SQLHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 public class CoreAPI extends JavaPlugin {
 

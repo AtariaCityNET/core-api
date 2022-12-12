@@ -1,4 +1,4 @@
-package de.lukas.coreapi.utils.sql;
+package net.atariacity.coreapi.utils.sql;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

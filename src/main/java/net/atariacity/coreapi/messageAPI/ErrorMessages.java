@@ -1,6 +1,6 @@
-package de.lukas.coreapi.messageAPI;
+package net.atariacity.coreapi.messageAPI;
 
-import de.lukas.coreapi.CoreAPI;
+import net.atariacity.coreapi.CoreAPI;
 
 public class ErrorMessages {
 

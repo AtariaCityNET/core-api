@@ -1,9 +1,5 @@
-package de.lukas.coreapi.utils.sql;
+package net.atariacity.coreapi.utils.sql;
 
-import de.lukas.coreapi.CoreAPI;
-import org.bukkit.Bukkit;
-
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

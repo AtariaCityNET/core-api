@@ -1,4 +1,4 @@
-package de.lukas.coreapi.utils;
+package net.atariacity.coreapi.utils;
 
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
