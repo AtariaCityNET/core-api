@@ -12,7 +12,8 @@ public class SQLHandler {
     }
 
     public static void createTables() {
-        database.createTable("eco", "uuid VARCHAR(100), value DOUBLE, PRIMARY KEY (`uuid`)");
+        database.createTable("BARGELD", "uuid VARCHAR(100), value DOUBLE, PRIMARY KEY (`uuid`)");
+        database.createTable("BANK", "konto INTEGER, uuid VARCHAR(100), value DOUBLE, PRIMARY KEY (`konto`)");
     }
 
     public static void disconnect() {

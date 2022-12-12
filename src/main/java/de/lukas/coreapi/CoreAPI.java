@@ -1,5 +1,6 @@
 package de.lukas.coreapi;
 
+import de.lukas.coreapi.economyAPI.EconomyAPI;
 import de.lukas.coreapi.utils.TextComponents;
 import de.lukas.coreapi.utils.sql.SQLConfig;
 import de.lukas.coreapi.utils.sql.SQLFunctions;
@@ -11,6 +12,7 @@ public class CoreAPI extends JavaPlugin {
 
     public static SQLFunctions getSQL;
     public static TextComponents getTextComponents;
+    public static EconomyAPI getEconomyAPI;
 
     @Override
     public void onEnable() {
@@ -32,6 +34,7 @@ public class CoreAPI extends JavaPlugin {
     private static void declareInstances() {
         getSQL = new SQLFunctions(SQLHandler.database);
         getTextComponents = new TextComponents();
+        getEconomyAPI = new EconomyAPI();
     }
 
 }

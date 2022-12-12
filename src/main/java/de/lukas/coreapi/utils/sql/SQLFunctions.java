@@ -1,5 +1,9 @@
 package de.lukas.coreapi.utils.sql;
 
+import de.lukas.coreapi.CoreAPI;
+import org.bukkit.Bukkit;
+
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -47,7 +51,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the Integer you are searching for or '0'
      */
-    public int getInt(String table, String column, String identifier, String value) {
+    public int getInt(String table, String column, Object identifier, Object value) {
         final int[] i = {0};
         methods.getInt(table, column, identifier, value, new Callback() {
             @Override
@@ -68,7 +72,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the Double you are searching for or '0'
      */
-    public double getDouble(String table, String column, String identifier, String value) {
+    public double getDouble(String table, String column, Object identifier, Object value) {
         final double[] d = {0};
         methods.getDouble(table, column, identifier, value, new Callback() {
             @Override
@@ -88,7 +92,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the String you are searching for or 'null'
      */
-    public String getString(String table, String column, String identifier, String value) {
+    public String getString(String table, String column, Object identifier, Object value) {
         final String[] s = {""};
         methods.getString(table, column, identifier, value, new Callback() {
             @Override
@@ -108,7 +112,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the Boolean you are searching for or 'false'
      */
-    public boolean getBoolean(String table, String column, String identifier, String value) {
+    public boolean getBoolean(String table, String column, Object identifier, Object value) {
         final boolean[] b = {false};
         methods.getBoolean(table, column, identifier, value, new Callback() {
             @Override
@@ -128,7 +132,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the Long you are searching for or 'null'
      */
-    public Long getLong(String table, String column, String identifier, String value) {
+    public Long getLong(String table, String column, Object identifier, Object value) {
         final long[] l = {Long.parseLong("")};
         methods.getLong(table, column, identifier, value, new Callback() {
             @Override
@@ -148,7 +152,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the Float you are searching for or 'null'
      */
-    public Float getFloat(String table, String column, String identifier, String value) {
+    public Float getFloat(String table, String column, Object identifier, Object value) {
         final Float[] f = {Float.valueOf(0)};
         methods.getFloat(table, column, identifier, value, new Callback() {
             @Override
@@ -205,7 +209,7 @@ public class SQLFunctions {
      * @param value      Value you target for
      * @return Returns the List you are searching for
      */
-    public List<String> getList(String table, String column, String identifier, String value) {
+    public List<String> getList(String table, String column, Object identifier, Object value) {
         final List<String>[] list = new List[]{new LinkedList<>()};
         methods.getList(table, column, identifier, value, new Callback() {
             @Override
@@ -233,13 +237,30 @@ public class SQLFunctions {
     }
 
     /**
+     * Method to get the highest value
+     * @param table Targeted Table-Name
+     * @param column Targeted column
+     * @return Returns the highest object in this column
+     */
+    public Object getHighest(String table, String column) {
+        final Object[] o = {new Object()};
+        methods.getHighest(table, column, new Callback() {
+            @Override
+            public void onSucces(Object done) {
+                o[0] = done;
+            }
+        });
+        return o[0];
+    }
+
+    /**
      * Method to check if a Table contains content
      * @param table Targeted Table-Name
      * @param identifier Column you target for
      * @param value      Value you target for
      * @return Returns true if the Table contains content
      */
-    public boolean contentExists(String table, String identifier, String value) {
+    public boolean contentExists(String table, Object identifier, Object value) {
         final boolean[] b = {false};
         methods.contentExists(table, identifier, value, new Callback() {
             @Override

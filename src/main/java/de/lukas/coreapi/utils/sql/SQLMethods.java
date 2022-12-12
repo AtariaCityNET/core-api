@@ -58,7 +58,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the Integer you are searching for or '0'
      */
-    public void getInt(String table, String column, String identifier, String value, Callback callback) {
+    public void getInt(String table, String column, Object identifier, Object value, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
@@ -94,7 +94,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the Double you are searching for or '0'
      */
-    public void getDouble(String table, String column, String identifier, String value, Callback callback) {
+    public void getDouble(String table, String column, Object identifier, Object value, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
@@ -129,7 +129,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the String you are searching for or 'null'
      */
-    public void getString(String table, String column, String identifier, String value, Callback callback) {
+    public void getString(String table, String column, Object identifier, Object value, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
@@ -163,7 +163,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the Boolean you are searching for or 'false'
      */
-    public void getBoolean(String table, String column, String identifier, String value, Callback callback) {
+    public void getBoolean(String table, String column, Object identifier, Object value, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
@@ -197,7 +197,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the Long you are searching for or 'null'
      */
-    public void getLong(String table, String column, String identifier, String value, Callback callback) {
+    public void getLong(String table, String column, Object identifier, Object value, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
@@ -231,7 +231,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the Float you are searching for or 'null'
      */
-    public void getFloat(String table, String column, String identifier, String value, Callback callback) {
+    public void getFloat(String table, String column, Object identifier, Object value, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
@@ -326,7 +326,7 @@ public class SQLMethods {
      * @param value      Value you target for
      * @return Returns the List you are searching for
      */
-    public void getList(String table, String column, String identifier, String value, Callback callback) {
+    public void getList(String table, String column, Object identifier, Object value, Callback callback) {
         List<String> list = new LinkedList<>();
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
@@ -395,13 +395,45 @@ public class SQLMethods {
     }
 
     /**
+     * Method to get the highest value
+     * @param table Targeted Table-Name
+     * @param column Targeted column
+     * @return Returns the highest object in this column
+     */
+    public void getHighest(String table, String column, Callback callback) {
+        Object o = new Object();
+        Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
+            @Override
+            public void run() {
+                try (PreparedStatement statement = database.getConnection().prepareStatement("SELECT MAX (" + column + ") FROM +" + table)) {
+                    ResultSet rs = statement.executeQuery();
+                    if (rs.next()) {
+                        Bukkit.getScheduler().runTask(CoreAPI.getInstance(), new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    callback.onSucces(rs.getObject(column));
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
      * Method to check if a Table contains content
      * @param table Targeted Table-Name
      * @param identifier Column you target for
      * @param value      Value you target for
      * @return Returns true if the Table contains content
      */
-    public void contentExists(String table, String identifier, String value, Callback callback) {
+    public void contentExists(String table, Object identifier, Object value, Callback callback) {
         final boolean[] b = {false};
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
