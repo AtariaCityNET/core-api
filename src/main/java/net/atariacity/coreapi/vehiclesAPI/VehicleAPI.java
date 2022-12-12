@@ -1,4 +1,4 @@
-package de.lukas.coreapi.vehiclesAPI;
+package net.atariacity.coreapi.vehiclesAPI;
 
 import org.bukkit.entity.Player;
 

@@ -1,7 +1,7 @@
-package de.lukas.coreapi.utils.sql;
+package net.atariacity.coreapi.utils.sql;
 
-import de.lukas.coreapi.CoreAPI;
-import de.lukas.coreapi.utils.yamlManager.YamlManager;
+import net.atariacity.coreapi.CoreAPI;
+import net.atariacity.coreapi.utils.yamlManager.YamlManager;
 
 public class SQLConfig {
 

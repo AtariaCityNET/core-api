@@ -1,6 +1,6 @@
-package de.lukas.coreapi.utils.sql;
+package net.atariacity.coreapi.utils.sql;
 
-import de.lukas.coreapi.CoreAPI;
+import net.atariacity.coreapi.CoreAPI;
 import org.bukkit.Bukkit;
 
 import java.sql.PreparedStatement;

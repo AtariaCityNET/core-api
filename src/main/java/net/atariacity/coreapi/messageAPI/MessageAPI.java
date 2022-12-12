@@ -1,4 +1,4 @@
-package de.lukas.coreapi.messageAPI;
+package net.atariacity.coreapi.messageAPI;
 
 public class MessageAPI {
 
