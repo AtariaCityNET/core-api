@@ -23,17 +23,15 @@ public class SQLMethods {
     }
 
     /**
-     * Method to set a Data into the MySQL
+     * Method to send a Command to the MySQL
      *
-     * @param table      Targeted Table-Name
-     * @param column     Targeted Column
-     * @param value      Value you want to set
+     * @param sql_command      Targeted SQL - Command
      */
-    public void setData(String table, String column, Object value, Callback callback) {
+    public void sendSQL(String sql_command, Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(CoreAPI.getInstance(), new Runnable() {
             @Override
             public void run() {
-                try(PreparedStatement statement = database.getConnection().prepareStatement("INSERT INTO" + table + " (" + column + ") VALUES (" + value + ")")) {
+                try(PreparedStatement statement = database.getConnection().prepareStatement(sql_command)) {
                     statement.executeQuery();
 
                     Bukkit.getScheduler().runTask(CoreAPI.getInstance(), new Runnable() {

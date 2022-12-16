@@ -21,21 +21,12 @@ public class SQLFunctions {
     }
 
     /**
-     * Method to set a Data into the MySQL
+     * Method to send a Command to the MySQL
      *
-     * @param table      Targeted Table-Name
-     * @param column     Targeted Column
-     * @param value      Value you want to set
+     * @param sql_command      Targeted SQL - Command
      */
-    public boolean setData(String table, String column, Object value) {
-        final Boolean[] b = {false};
-        methods.setData(table, column, value, new Callback() {
-            @Override
-            public void onSucces(Object done) {
-                b[0] = (Boolean) done;
-            }
-        });
-        return b[0];
+    public void sendSQL(String sql_command, Callback callback) {
+        methods.sendSQL(sql_command, callback);
     }
 
     /**
